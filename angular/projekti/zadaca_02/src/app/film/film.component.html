@@ -1,0 +1,21 @@
+<div *ngIf="porukaGreske">{{porukaGreske}}</div>
+
+<ng-container *ngIf="!porukaGreske">
+    <div id="film">
+        <img src="{{posteriPutanja}}{{film?.poster}}" alt="{{film?.naslov}}" width="300"/> <br>
+        <div id="filmTekst">
+            Naslov: {{film?.naslov}} <br>
+            Originalni naslov: {{film?.originalni_naslov}} <br>
+            Opis: {{film?.opis}} <br>
+            Jezik: {{film?.jezik}} <br>
+            Datum izlaska: {{pipe.transform(film?.datum_izlaska, 'dd.MM.yyyy')}} <br>
+            Datum izlaska: {{pipe.transform(film?.datum_unosa, 'dd.MM.yyyy HH:mm:ss')}} <br>
+            Prosječna ocjena glasova: {{film?.prosjek_glasova}} <br>
+            Broj glasova: {{film?.broj_glasova}} <br>
+            Dodao korisnik: {{korimeDodao}} <br>
+            Za odrasle: {{ film?.odrasli ? 'da' : 'ne' }}
+        </div>
+    </div>    
+</ng-container>
+
+<button id="nazad" (click)="nazad()">Nazad</button> <br>

@@ -1,0 +1,33 @@
+<header>
+  <h1>Filmoteka</h1>
+</header>
+<nav>
+  <a routerLink="/">Početna</a>
+  <ng-template #korisnik>
+    <a routerLink="/" (click)="odjava()">Odjava</a>
+    <a routerLink="/dokumentacija">Dokumentacija</a>
+    <a routerLink="/filmoviPregled">Filmovi pregled</a>
+    <a routerLink="/filmoviPretrazivanje">Pretraživanje filmova</a>
+    <a routerLink="/profil">Profil</a>
+  </ng-template>
+  <ng-template #admin>
+    <a routerLink="/" (click)="odjava()">Odjava</a>
+    <a routerLink="/dokumentacija">Dokumentacija</a>
+    <a routerLink="/filmoviPregled">Filmovi pregled</a>
+    <a routerLink="/filmoviPretrazivanje">Pretraživanje filmova</a>
+    <a routerLink="/filmoviPrijedlozi">Filmovi prijedlozi</a>
+    <a routerLink="/zanrovi">Žanrovi</a>
+    <a routerLink="/profil">Profil</a>
+  </ng-template>
+  <ng-template #neprijavljen>
+    <a routerLink="/prijava">Prijava</a>
+    <a routerLink="/registracija">Registracija</a>
+    <a routerLink="/dokumentacija">Dokumentacija</a>
+  </ng-template>
+  <div *ngIf="!autentifikacija.prijavljen; then neprijavljen;"></div>
+  <div *ngIf="autentifikacija.prijavljen && autentifikacija.tipKorisnika==2; then korisnik;"></div>
+  <div *ngIf="autentifikacija.prijavljen && autentifikacija.tipKorisnika==1; then admin;"></div>
+</nav>
+<main>
+  <router-outlet></router-outlet>
+<footer>Leon Raknić &copy; 2022</footer>

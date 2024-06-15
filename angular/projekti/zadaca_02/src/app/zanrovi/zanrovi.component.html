@@ -1,0 +1,15 @@
+<div>{{preskoceniZanroviPoruka}}</div>
+
+<table>
+    <tr><th>Id</th><th>Naziv</th><th></th></tr>
+    <tr *ngFor="let z of zanrovi">
+        <td>{{z.id}}</td>
+        <td>{{z.naziv}}</td>
+        <td><button (click)="azurirajNaziv(z.id)">Ažuriraj naziv</button></td>
+    </tr>
+</table>
+
+<div id="zanrGumbovi">
+    <button (click)="obrisiZanrove()">Obriši žanrove za koje ne postoje filmovi</button>
+    <button (click)="syncTMDB()">Povući listu žanrova iz TMDB</button>
+</div>

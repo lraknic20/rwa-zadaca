@@ -1,0 +1,30 @@
+<form #f="ngForm" (ngSubmit)="registracija(f)">
+    <h2>Registracija</h2>
+    <div class="polje">
+        <label for="ime">Ime </label>
+        <input type="text" name="ime" id="ime" ngModel/>
+    </div>
+    <div class="polje">
+        <label for="prezime">Prezime </label>
+        <input type="text" name="prezime" id="prezime" ngModel/>
+    </div>
+    <div class="polje">
+        <label for="korime">Korisničko ime </label>
+        <input type="text" name="korime" id="korime" ngModel/>
+    </div>
+    <div class="polje">
+        <label for="email">E-mail </label>
+        <input type="email" name="email" id="email" ngModel/>
+    </div>
+    <div class="polje">
+        <label for="lozinka">Lozinka </label>
+        <input type="password" name="lozinka" id="lozinka" ngModel/>
+    </div>
+    <div class="polje">
+        <label for="adresa">Adresa </label>
+        <input type="text" name="adresa" id="adresa" ngModel/>
+    </div>
+    <button type="submit">Registriraj</button>
+</form>
+
+<div *ngIf="porukaGreske" class="error">{{porukaGreske}}</div>

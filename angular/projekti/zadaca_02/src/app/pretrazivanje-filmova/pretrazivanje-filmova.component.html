@@ -1,0 +1,26 @@
+<div class="filter">
+    Ključna riječ: <input type="text" id="filter" placeholder="Ključna riječ" [(ngModel)]="filter" (keyup)="dFilmoveDelay(500)">
+</div>
+<table>
+    <tr><th>Id</th><th>Jezik</th><th>Originalni naslov</th><th>Naslov</th><th>Opis</th><th>Poster</th><th>Datum izlaska</th><th></th></tr>
+    <tr *ngFor="let f of filmoviTMDB">
+        <td>{{f.id}}</td>
+        <td>{{f.jezik}}</td>
+        <td>{{f.originalni_naslov}}</td>
+        <td>{{f.naslov}}</td>
+        <td>{{f.opis}}</td>
+        <td><img src="{{posteriPutanja}}{{f.poster}}" alt="{{f.naslov}}" width="100"/></td>
+        <td>{{pipe.transform(f.datum_izlaska, 'dd.MM.yyyy')}}</td>
+        <td>
+            <button (click)="dodaj(f.id)" [disabled]="provjeri(f.id)">Dodaj u bazu</button>
+        </td>
+    </tr>
+</table>
+
+<div class="stranicenje">
+    <button *ngIf="stranica! > 1" (click)="dohvatiFilmove(1, filter)"><<</button>
+    <button *ngIf="stranica! > 1" (click)="dohvatiFilmove(stranica! - 1, filter)"><</button>
+    <button (click)="dohvatiFilmove(1, filter)">{{stranica}}/{{500}}</button>
+    <button *ngIf="stranica! < 500!" (click)="dohvatiFilmove(stranica! + 1, filter)">></button>
+    <button *ngIf="stranica! < 500" (click)="dohvatiFilmove(500, filter)">>></button>
+</div>

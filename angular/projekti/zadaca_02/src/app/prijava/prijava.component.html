@@ -1,0 +1,24 @@
+<form #prijavaForma="ngForm" (ngSubmit)="prijava()">
+    <h2>Prijava</h2>
+    <div class="polje">
+        <label>Korisničko ime: </label>
+        <input type="text" [(ngModel)]="korime" name="korime" required minLength="3">
+        <div *ngIf="korimePoruka" class="error">{{korimePoruka}}</div>
+    </div>
+    <div class="polje">
+        <label>Lozinka: </label>
+        <input type="password" [(ngModel)]="lozinka" name="lozinka" required minLength="3">
+        <div *ngIf="lozinkaPoruka" class="error">{{lozinkaPoruka}}</div>
+    </div>
+    <button type="submit">Prijava</button>
+</form>
+
+<div *ngIf="porukaGreske" class="error">{{porukaGreske}}</div>
+
+<div class="podaciZaPrijavu">
+    <p>
+        korime: obican, lozinka: rwa, uloga: korisnik
+        <br>
+        korime: administrator, lozinka: rwa, uloga: admin
+    </p>
+</div>

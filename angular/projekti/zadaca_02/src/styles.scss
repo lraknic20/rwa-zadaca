@@ -1,0 +1,178 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$tam-plava: #0070f3;
+$plava: #2f84e7;
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12pt 24pt;
+    background-color: #575757;
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            color: $tam-plava;
+        }
+    }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    font-size: 18pt;
+    font-weight: bold;
+    background-color: $plava;
+    color: white;
+    padding: 12pt 24pt;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 1%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px black;
+  
+    h2 {
+      margin: 0 0 20px 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #ccc;
+    }
+  
+    .polje {
+      display: flex;
+      flex-direction: column;
+      margin: 20px 10px 20px 10px;
+  
+      label {
+        margin-bottom: 8px;
+      }
+  
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 8px;
+      }
+    }
+  
+    button[type="submit"] {
+        font-weight: bold;
+        background-color: $tam-plava;
+        color: white;
+        border: 0;
+        border-radius: 4px;
+        padding: 8px 12px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        width: 35%;
+        height: 30pt;
+        margin-bottom: 2%;
+    }
+}
+
+.podaciZaPrijavu {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    max-width: 98%;
+    margin: auto;
+    margin-top: 5pt;
+    margin-bottom: 5pt;
+
+    td, th {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+        background-color: $plava;
+        color: white;
+        text-align: center;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    button[disabled] {
+      cursor: not-allowed;
+    }    
+}
+
+.filter {
+    margin: 15pt;
+    input[type="number"]{
+        width: 30pt;
+    }
+}
+
+.stranicenje {
+    margin: 5pt;
+    margin-left: 13pt;
+}
+
+#zanrGumbovi {
+    margin-left: 12pt;
+}
+
+button {
+  border: 1pt solid #cccccc;
+  border-radius: 4pt;
+  background-color: white;
+  font-size: 10pt;
+  padding: 8pt 16pt;
+  margin: 0 1pt;
+  cursor: pointer;
+  &:hover {
+    background-color: #dddddd;
+  }
+  &:active {
+    background-color: $tam-plava;
+    color: white;
+  }
+}
+
+#film {
+  margin: 10pt;
+  display: flex;
+  img {
+    flex: 1;
+    max-width: 250pt;
+  }
+  #filmTekst {
+    flex: 2;
+    margin-left: 10pt;
+  }
+}
+
+#nazad {
+  margin-left: 10pt;
+}
+
+#dokumentacija {
+  #slika {
+    margin: 5pt;
+    img {
+      display: flex;
+      margin: auto;
+      margin-bottom: 5pt;
+    }
+    text-align: center;
+  }
+  text-align: center;
+}

@@ -1,0 +1,26 @@
+<form #f="ngForm" (ngSubmit)="azuriranje(f)">
+    <div class="polje">
+        <label for="ime">Ime </label>
+        <input type="text" name="ime" id="ime" ngModel [(ngModel)]="korisnik.ime"/>
+    </div>
+    <div class="polje">
+        <label for="prezime">Prezime </label>
+    <input type="text" name="prezime" id="prezime" ngModel [(ngModel)]="korisnik.prezime"/>
+    </div>
+    <div class="polje">
+        <label for="korime">Korisničko ime </label>
+    <input type="text" name="korime" id="korime" disabled ngModel [(ngModel)]="korisnik.korime"/>
+    </div>
+    <div class="polje">
+        <label for="email">E-mail </label>
+    <input type="email" name="email" id="email" disabled ngModel [(ngModel)]="korisnik.email"/>
+    </div>
+    <div class="polje">
+        <label for="adresa">Adresa </label>
+        <input type="text" name="adresa" id="adresa" ngModel [(ngModel)]="korisnik.adresa"/>
+    </div>
+    <button type="submit">Ažuriraj podatke</button>
+</form>
+
+
+<div *ngIf="poruka" class="error">{{poruka}}</div>

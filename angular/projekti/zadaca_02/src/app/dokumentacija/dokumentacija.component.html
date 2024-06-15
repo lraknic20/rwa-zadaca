@@ -1,0 +1,273 @@
+<div id="dokumentacija">
+    <div id="slika">
+        <img src="./assets/lraknic20.jpeg" alt="Slika - Leon Raknić">
+        Leon Raknić - email: lraknic20@student.foi.hr
+    </div>
+    <br>
+    Tablica 1. - REST servis
+    <table>
+        <tr>
+            <th>
+                Resurs
+                Parametri
+            </th>
+            <th>
+                GET
+                Čitanje
+            </th>
+            <th>
+                POST
+                kreiranje
+            </th>
+            <th>
+                PUT
+                ažuriranje
+            </th>
+            <th>
+                DELETE
+                brisanje
+            </th>
+        </tr>
+        <tr>
+            <td>api/korisnici</td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>api/korisnici/[korime]</td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>api/korisnici/[korime]/aktivacija</td>
+            <td></td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>api/korisnici/[korime]/prijava</td>
+            <td></td>
+            <td>Napravljeno</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>api/filmovi/ <br>
+                ?stranica=broj <br>
+                &brojFilmova=broj <br>
+                [&datum=datum] <br>
+                [&zanr=idZanr] <br>
+                [&naziv=dioNazivFilma] <br>
+                [&sortiraj=[d | z | n]]
+            </td>
+            <td>Nema filtriranje po datumu, nazivu i sortiranje uzlazno po datumu, nazivu ili žanru</td>
+            <td>Napravljeno</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>api/filmovi/[id]</td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+            <td>Samo ažuriranje odobrenosti</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>api/zanr/</td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+            <td></td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>api/zanr/[id]</td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>api/tmdb/zanr</td>
+            <td>Napravljeno</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>api/tmdb/filmovi <br>
+                ?kljucaRijec=rijec1 <br>
+                [,rijec2] <br>
+                &stranica=broj</td>
+            <td>Napravljeno, ali samo za jednu ključnu riječ</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    Tablica 2. - APP
+    <table>
+        <tr>
+            <th>Uloga</th>
+            <th>Stranica/e</th>
+            <th>Opis</th>
+        </tr>
+        <tr>
+            <td>Gost</td>
+            <td>Početna</td>
+            <td>Prikazuju se samo žanrovi koji imaju 2 filma dok je korisnik prijavljen</td>
+        </tr>
+        <tr>
+            <td>Gost</td>
+            <td>Dokumentacija</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>Gost</td>
+            <td>Registracija, Prijava, Odjava</td>
+            <td>Napravljeno, izbačen TOTP i aktivacija</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>Profil</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>Filmovi pregled</td>
+            <td>Napravljen je prikaz filmova uz straničenje, obično filtriranje po žanru i prikaz stranice Film na kojoj se nalaze više informacija o filmu.
+                Nema filtriranje po datumu, nazivu i sortiranje uzlazno.</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>Film</td>
+            <td>Napravljeno osim poveznice na "Galeriju slika"</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>Filmovi pretraživanje</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>Galerija slika</td>
+            <td>Nije napravljeno</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>Slika</td>
+            <td>Nije napravljeno</td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>Filmovi prijedlozi</td>
+            <td>Napravljeno, ali kod odobravanja se ne preuzima slika postera</td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>Žanrovi</td>
+            <td>Napravljeno</td>
+        </tr>
+    </table>
+    <br>
+    Tablica 3. - 2. zadaća
+    <table>
+        <tr>
+            <td>1.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Dodana tablica s dodadnim opisima</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>6.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td>Stvaranje JWT je u Rest servisu pa ovo nije točno rješenje</td>
+        </tr>
+        <tr>
+            <td>10.</td>
+            <td>Nije napravljeno</td>
+        </tr>
+        <tr>
+            <td>11.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>12.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>13.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>14.</td>
+            <td>reCaptcha v3 dodan na prijavu, registraciju i profil</td>
+        </tr>
+        <tr>
+            <td>15.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>16.</td>
+            <td>Dokumentacija ugrađena u angular</td>
+        </tr>
+        <tr>
+            <td>17.</td>
+            <td>Nije napravljeno prema opisu. Autentifikacija je dodana na Rest servis.</td>
+        </tr>
+        <tr>
+            <td>18.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>19.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>20.</td>
+            <td>Napravljeno</td>
+        </tr>
+        <tr>
+            <td>21.</td>
+            <td>Nije napravljeno</td>
+        </tr>
+    </table>
+    <br>
+    Tablica 4. - Dodatan opis
+    <table>
+        <tr>
+            <td>Ručno kompajliranje</td>
+            <td>Potrebno je instalirati Angular material pomoću naredbe<br>npm install --save @angular/material</td>
+        </tr>
+    </table>
+</div>

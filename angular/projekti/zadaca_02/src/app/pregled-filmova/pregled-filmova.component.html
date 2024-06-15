@@ -1,0 +1,34 @@
+<div class="filter">
+    Broj filmova po stranici:
+    <input type="number" name="brojFilmova" min="1" value="5" [(ngModel)]="this.brojFilmova" (ngModelChange)="prikaziFilmove(1,brojFilmova!)"/>
+    Odaberi žanr:
+    <select [(ngModel)]="odabranZanr" (change)="prikaziFilmove(1,brojFilmova!)">
+        <option [ngValue]="null"></option>
+        <option *ngFor="let zanr of zanrovi" [ngValue]="zanr.id">{{ zanr.naziv }}</option>
+      </select>
+</div>
+
+<div *ngIf="porukaGreske">{{porukaGreske}}</div> 
+
+<table *ngIf="!porukaGreske">
+    <tr><th>Naslov</th><th>Originalni naslov</th><th>Jezik</th><th>Opis</th><th>Poster</th><th>Datum izlaska</th><th>Datum unosa</th></tr>
+    <tr *ngFor="let f of odobreniFilmovi">
+        <td><a routerLink="/film/{{ f.id }}">{{f.originalni_naslov}}</a></td>
+        <td>{{f.naslov}}</td>
+        <td>{{f.jezik}}</td>
+        <td>{{f.opis}}</td>
+        <td><img src="{{posteriPutanja}}{{f.poster}}" alt="{{f.naslov}}" width="100"/></td>
+        <td>{{pipe.transform(f.datum_izlaska, 'dd.MM.yyyy')}}</td>
+        <td>{{pipe.transform(f.datum_unosa, 'dd.MM.yyyy HH:mm:ss')}}</td>
+    </tr>
+</table>
+
+<ng-container *ngIf="!porukaGreske">
+    <div class="stranicenje">
+        <button *ngIf="stranica! > 1" (click)="prikaziFilmove(1, brojFilmova!)"><<</button>
+        <button *ngIf="stranica! > 1" (click)="prikaziFilmove(stranica! - 1, brojFilmova!)"><</button>
+        <button (click)="prikaziFilmove(1, brojFilmova!)">{{stranica}}/{{ukupnoStranica}}</button>
+        <button *ngIf="stranica! < ukupnoStranica!" (click)="prikaziFilmove(stranica! + 1, brojFilmova!)">></button>
+        <button *ngIf="stranica! < ukupnoStranica!" (click)="prikaziFilmove(ukupnoStranica!, brojFilmova!)">>></button>
+    </div>
+</ng-container>
